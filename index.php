@@ -38,6 +38,35 @@
         for ($i = 1; $i <= 5; $i++){
             echo '<h5>iteracion #'.$i.'</h5>';
         }
+
+        //funciones
+
+        function sayHi(){
+            echo '<h2>Holis</h2>';
+        }
+
+        function suma(){
+            $num1 = 5;
+            $num2 = 10;
+
+            return $num1 + $num2;
+        }
+
+        sayHi();
+
+        echo suma()."\n";
+
+        $array = array(
+            0 => "Jeimmy",
+            1 => "Kimberly",
+            2 => "Kenny"
+        );
+
+        echo $array[2];
+
+        for($j = 0; $j < 3; $j++){
+            echo $array[$j]."\n";
+        }
     ?>
 
 
