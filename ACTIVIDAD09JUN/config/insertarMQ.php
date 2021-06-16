@@ -14,7 +14,13 @@
             $categoria = $_POST ['categoria'];
 
             $conexion = new Database;
-            $confirm = $conexion->insertar($nombre, $apellido, $edad, $marcacoche, $modelo, $numerocompetidor, $categoria);
+            $resultado = $conexion->validarCorredor($numerocompetidor);
+            $contador = $resultado->rowCount();
+            if($contador > 0){
+                $confirm = 3;
+            } else {
+                $confirm = $conexion->insertar($nombre, $apellido, $edad, $marcacoche, $modelo, $numerocompetidor, $categoria);
+            }
         } else {
             $confirm = 2; // uno o mas campos estan vacios
         }

@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Formulario Ingreso</span></a>
+                <a class="nav-link" href="./mostrar.php">Listado</a>
+        </div>
+    </nav>
+
     <div class="d-flex justify-content-center mt-5">
         <div class="card col-md-7">
             <div class="card-header">
@@ -16,8 +28,8 @@
             <div class="card-body">
                  <?php
                     if (isset($_GET['confirm'])){
-                        if ($_GET['confirm'] === "0") {
-                            echo '<div class="alert alert-danger" role="alert">Datos no ingresados</div>';
+                        if ($_GET['confirm'] === "0"){
+                            echo '<div class="alert alert-danger" role="alert">Dato no ingresado</div>';
                         }
                         if ($_GET['confirm'] === "1"){
                             echo '<div class="alert alert-success" role="alert">Qshao</div>';
@@ -26,7 +38,7 @@
                             echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
                         }
                         if ($_GET['confirm'] === "3"){
-                            echo '<div class="alert alert-danger" role="alert">Usuario ya registrado</div>';
+                            echo '<div class="alert alert-danger" role="alert">Ya existe el usuario que intenta registrar</div>';
                         }
                     }
                  ?>

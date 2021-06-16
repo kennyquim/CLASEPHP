@@ -33,7 +33,6 @@
                         ':modelo' => $modelo,
                         ':numerocompetidor' => $numerocompetidor,
                         ':categoria' => $categoria
-
                     ) 
                 );
 
@@ -44,6 +43,25 @@
             }
         }
 
+        public function validarCorredor($numerocompetidor){
+            $conexion = Database::getInstance();
+            $query = $conexion->db->prepare("SELECT numerocompetidor FROM usuarios WHERE numerocompetidor=:numerocompetidor");
+            $query->execute(
+                array(
+                    ":numerocompetidor" => $numerocompetidor
+                )
+                );
+            return ($query);
+                
+        }
+
+
+        public function datosCorredores() {
+            $conexion = Database::getInstance();
+            $query = $conexion->db->prepare("SELECT * from usuarios");
+            $query->execute();
+            return $query;
+        }
 
     }
 ?>
