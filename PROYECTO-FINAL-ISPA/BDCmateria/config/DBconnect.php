@@ -19,14 +19,14 @@
             return self::$instance;
         }
 
-        public function insertar($nombre){
+        public function insertar($nombres){
 
             try {
                 $conexion = Database::getInstance(); //obtiene la instancia de la clase
-                $query = $conexion->db->prepare("INSERT INTO materias (nombre) VALUES (:nombre)");
+                $query = $conexion->db->prepare("INSERT INTO materias (nombres) VALUES (:nombres)");
                 $query->execute(
                     array(
-                        ':nombre' => $nombre
+                        ':nombres' => $nombres
                     ) 
                 );
 
@@ -40,10 +40,10 @@
 
         public function validarMateria($nombre){
             $conexion = Database::getInstance();
-            $query = $conexion->db->prepare("SELECT nombre FROM materias WHERE nombre=:nombre");
+            $query = $conexion->db->prepare("SELECT nombres FROM materias WHERE nombres=:nombres");
             $query->execute(
                 array(
-                    ":nombre" => $nombre
+                    ":nombres" => $nombre
                 )
                 );
             return ($query);

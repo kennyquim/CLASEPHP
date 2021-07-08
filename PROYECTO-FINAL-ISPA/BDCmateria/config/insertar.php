@@ -1,20 +1,20 @@
 <?php
     include_once("DBconnect.php");
 
-    if(isset($_POST['nombre'])){
+    if(isset($_POST['nombres'])){
 
-        if($_POST['nombre'] !== ""){
+        if($_POST['nombres'] !== ""){
 
-            $nombre = $_POST['nombre'];
+            $nombres = $_POST['nombres'];
     
             $conexion = new Database;
-            $resultado = $conexion->validarMateria($nombre);
+            $resultado = $conexion->validarMateria($nombres);
             $contador = $resultado->rowCount();
             echo $contador;
             if($contador > 0){
                 $confirm = 3;
             } else {
-                $confirm = $conexion->insertar($nombre);
+                $confirm = $conexion->insertar($nombres);
             }
         } else {
             $confirm = 2; // uno o mas campos estan vacios

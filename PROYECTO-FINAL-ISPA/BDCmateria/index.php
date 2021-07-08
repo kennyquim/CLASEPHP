@@ -59,7 +59,7 @@
                                 echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
                             }
                             if ($_GET['confirm'] === "3"){
-                                echo '<div class="alert alert-danger" role="alert">Ya existe el usuario que intenta registrar</div>';
+                                echo '<div class="alert alert-danger" role="alert">Ya existe la materia que intenta registrar</div>';
                             }
                         }
                     ?>   
@@ -79,7 +79,7 @@
                         <form action="./config/insertar.php" method="POST">
                             <div class="form-group">
                                 <label for="id">Nombre</label>
-                                <input required type="text" class="form-control" id="nombre" name="nombre">
+                                <input required type="text" class="form-control" id="nombres" name="nombres">
                               </div>
                               <button type="submit" class="btn btn-primary">Crear</button>
                             

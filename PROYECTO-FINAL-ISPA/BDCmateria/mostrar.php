@@ -41,7 +41,7 @@ $resultado = $conexion->datosMateria();
         <?php
         foreach($resultado as $fila){
             echo "<tr>
-                <td>".$fila['userId']."</td>
+                <td>".$fila['nombres']."</td>
             </tr>";
         }
     ?>
